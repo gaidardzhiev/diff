@@ -1,3 +1,8 @@
+/*
+ * Copyright (C) 2025 Ivan Gaydardzhiev
+ * Licensed under the GPL-3.0-only
+ */
+
 #include <arm_acle.h>
 #include <arm_neon.h>
 #include <stdio.h>
