@@ -2,11 +2,15 @@
 
 This is a high performance diff utility tailored for **ARMv8 32bit Linux systems**, leveraging **ARMv8 hardware CRC32 instructions** and **Neon SIMD** to speed up text comparison dramatically compared to traditional diff tools.
 
+---
+
 ## Overview
 
 This tool computes differences between two text files and outputs results in a universally recognized GNU unified diff format, ensuring compatibility with standard `*nix` workflows.
 
 Unlike traditional line by line string comparisons, it uses hardware accelerated hashing combined with vectorized instructions to achieve speed and efficiency.
+
+---
 
 ## Core Components and Algorithms
 
@@ -48,11 +52,15 @@ Unlike traditional line by line string comparisons, it uses hardware accelerated
 
 This makes results immediately usable with `patch` and other `*nix` tools.
 
+---
+
 ## ARMv8 Neon and CRC32 Details
 
 - **Neon SIMD:** ARMs Advanced SIMD extension provides 32 registers of 128 bits each, capable of performing parallel operations on multiple data elements simultaneously.
 - **CRC32 Extensions:** ARMv8 includes hardware crypto extensions facilitating fast CRC32 computation with intrinsic support, drastically accelerating hashing tasks.
 - The code utilizes Neon intrinsics like `vld1q_u32`, `vceqq_u32`, and bytewise comparisons using `vceqq_u8` for vectorized equality checks, minimizing CPU cycles and branch mispredictions.
+
+---
 
 ## Performance
 
@@ -62,6 +70,8 @@ Benchmarks on ARMv8 32bit show that this diff implementation typically runs fast
 - Reduced expensive bytewise comparisons through careful hashing and SIMD verification.
 
 This makes it a compelling choice for ARM based systems, particularly embedded or resource constrained devices where performance is critical.
+
+---
 
 ## Getting Started
 
@@ -77,8 +87,18 @@ make
 
 ---
 
+## Potential Improvements & Benchmarking Scripts
+
+1. Potential improvements include adding multi threading to leverage multiple CPU cores for even faster diffing, optimizing memory usage and caching strategies for very large files, and refining the hashing collision detection for edge cases.
+
+2. Developing POSIX shell scripts for automated testing and benchmarking can help regularly compare performance and correctness against the system GNU diff tool on diverse datasets. These scripts can generate large controlled random files, run both diff implementations, capture timing data, and summarize differences to ensure ongoing optimization and reliability.
+
+---
+
 ## License & Contribution
 
-This project is provided under the GPL3 License.
-This is experimental code aimed at exploring ARM Neon hardware acceleration in diff algorithms.
-Contributions to optimize or port to 64bit ARM or multi threading improvements are welcome.
+This project is licensed under the GNU General Public License v3 (GPL-3.0). It ensures that any modifications or derivative works remain open source under the same license, promoting collaborative improvement and freedom to use, modify, and share the code.
+
+This code is experimental, focused on exploring ARM Neon hardware acceleration in diff algorithms. Contributions that improve performance, portability, or functionality are highly welcome. Please submit pull requests or issues to help enhance this project.
+
+---
