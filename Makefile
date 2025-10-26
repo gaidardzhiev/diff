@@ -1,4 +1,4 @@
-CC= gcc
+CC=gcc
 FLAGS=-march=armv8-a+simd+crc -O3
 BIN=diff
 
