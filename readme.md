@@ -91,7 +91,7 @@ make
 
 1. Potential improvements include adding multi threading to leverage multiple CPU cores for even faster diffing, optimizing memory usage and caching strategies for very large files, and refining the hashing collision detection for edge cases.
 
-2. Developing POSIX shell scripts for automated testing and benchmarking can help regularly compare performance and correctness against the system GNU diff tool on diverse datasets. These scripts can generate large controlled random files, run both diff implementations, capture timing data, and summarize differences to ensure ongoing optimization and reliability.
+~~2. Developing POSIX shell scripts for automated testing and benchmarking can help regularly compare performance and correctness against the system GNU diff tool on diverse datasets. These scripts can generate large controlled random files, run both diff implementations, capture timing data, and summarize differences to ensure ongoing optimization and reliability.~~
 
 ---
 
