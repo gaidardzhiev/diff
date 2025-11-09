@@ -54,4 +54,4 @@ q=$(ftime "diff -u" "${z}" "${x}")
 
 printf "\nin this test %s\n" "${f}"
 
-rm -f "${base}" "${mod}"
+rm -f "${b}" "${m}"
